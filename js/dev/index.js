@@ -622,9 +622,9 @@ function elementIsChildOf(el, parent) {
   }
   return isChild;
 }
-function showWarning(text) {
+function showWarning(text2) {
   try {
-    console.warn(text);
+    console.warn(text2);
     return;
   } catch (err) {
   }
@@ -4692,3 +4692,36 @@ function menuInit() {
   });
 }
 document.querySelector("[data-fls-menu]") ? window.addEventListener("load", menuInit) : null;
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector(".benefits__button.fixed-button");
+  const footer = document.querySelector("footer");
+  function checkButtonVisibility() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const scrolledEnough = scrollY > 300;
+    const footerRect = footer.getBoundingClientRect();
+    const buttonHeight = button.offsetHeight;
+    const buttonBottomPosition = windowHeight - 20;
+    const footerOverlappingButton = footerRect.top < buttonBottomPosition + buttonHeight;
+    if (scrolledEnough && !footerOverlappingButton) {
+      button.classList.add("visible");
+    } else {
+      button.classList.remove("visible");
+    }
+  }
+  window.addEventListener("scroll", checkButtonVisibility);
+  window.addEventListener("resize", checkButtonVisibility);
+  checkButtonVisibility();
+});
+const btn = document.querySelector(".text__more");
+const text = document.querySelector(".text__fish");
+btn.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (text.style.display === "none" || text.style.display === "") {
+    text.style.display = "block";
+    btn.textContent = "Hide";
+  } else {
+    text.style.display = "none";
+    btn.textContent = "Learn more";
+  }
+});
