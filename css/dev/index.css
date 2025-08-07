@@ -523,11 +523,25 @@ body {
   height: 0.8125rem;
   background: url("../assets/img/icons/arr_b.svg") center/cover no-repeat;
 }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 0.0625rem !important;
+  height: 0.0625rem !important;
+  padding: 0 !important;
+  margin: -0.0625rem !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 @media (max-width: 47.99875em) and (any-hover: none){
   .icon-menu {
     cursor: default;
   }
 }
+
 @media (max-width: 47.99875em){
   .menu__body {
     position: fixed;
@@ -634,6 +648,7 @@ body {
     width: 100%;
   }
 }
+
 @media (max-width: 20em){
   .title {
     font-size: 2rem;
@@ -651,6 +666,7 @@ body {
     margin-bottom: 1.25rem;
   }
 }
+
 @media (min-width: 20em) and (max-width: 64.375em){
   .title {
     font-size: clamp( 2rem , 1.8873239436625rem  +  0.5633802817vw , 2.25rem );
@@ -668,6 +684,7 @@ body {
     margin-bottom: clamp( 1.25rem , 1.109154929575rem  +  0.7042253521vw , 1.5625rem );
   }
 }
+
 @media (min-width: 47.99875em){
   .menu__list {
     display: flex;
@@ -675,6 +692,7 @@ body {
     gap: 1.875rem;
   }
 }
+
 @media (min-width: 64.375em){
   .title {
     font-size: 2.25rem;
@@ -692,6 +710,7 @@ body {
     margin-bottom: 1.5625rem;
   }
 }
+
 @media (any-hover: hover){
   .menu__link:hover {
     text-decoration: underline;

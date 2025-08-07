@@ -622,9 +622,9 @@ function elementIsChildOf(el, parent) {
   }
   return isChild;
 }
-function showWarning(text2) {
+function showWarning(text) {
   try {
-    console.warn(text2);
+    console.warn(text);
     return;
   } catch (err) {
   }
@@ -4713,15 +4713,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", checkButtonVisibility);
   checkButtonVisibility();
 });
-const btn = document.querySelector(".text__more");
-const text = document.querySelector(".text__fish");
-btn.addEventListener("click", function(event) {
-  event.preventDefault();
-  if (text.style.display === "none" || text.style.display === "") {
-    text.style.display = "block";
-    btn.textContent = "Hide";
+document.querySelector(".text__more").addEventListener("click", function(e) {
+  e.preventDefault();
+  const text = document.querySelector(".text__fish");
+  if (text.classList.contains("visually-hidden")) {
+    text.classList.remove("visually-hidden");
+    this.textContent = "Hide";
   } else {
-    text.style.display = "none";
-    btn.textContent = "Learn more";
+    text.classList.add("visually-hidden");
+    this.textContent = "Learn more";
   }
 });
