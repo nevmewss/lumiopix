@@ -113,7 +113,8 @@ body {
 .benefits__button.fixed-button {
   position: fixed;
   bottom: 1.25rem;
-  right: 1.25rem;
+  left: 50%;
+  transform: translate(0rem, -50%);
   z-index: 1000;
   transition: all 0.3s;
   text-decoration: none;
@@ -513,6 +514,7 @@ body {
   gap: 0.625rem;
   color: #000;
   font-weight: 700;
+  margin-bottom: 1.25rem;
 }
 .text__more::after {
   content: "";
