@@ -260,6 +260,14 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPagination();
   showPage();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector(".comments__input");
+  const button = document.querySelector(".comments__button");
+  input.addEventListener("input", () => {
+    const hasText = input.value.trim().length > 0;
+    button.disabled = !hasText;
+  });
+});
 export {
   slideUp as a,
   slideDown as b,
