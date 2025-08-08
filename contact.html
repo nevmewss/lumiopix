@@ -48,8 +48,11 @@
         ]
       }
 		</script>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1754653667931"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1754653667931">
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1754653667933"></script>
+		<script type="module" crossorigin="" src="./js/showmore.min.js?v=1754653667933"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1754653667933">
+		<link rel="stylesheet" crossorigin="" href="./css/showmore.min.css?v=1754653667933">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1754653667933">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -94,57 +97,66 @@
 				</div>
 			</header>
 			<main class="page">
-				<section class="page__about about">
-					<div class="about__container">
-						<h2 class="about__title title">About Us</h2>
-						<div class="about__text">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-							</p>
+				<section class="page__contact contact">
+					<div class="contact__container">
+						<h2 class="contact__title title">Contact us</h2>
+						<form action="#" class="contact__form form" id="contactForm">
+							<div class="form__inputs">
+								<div class="form__left">
+									<div class="form__item">
+										<input class="form__input" placeholder="Name" name="Name" type="text" required>
+									</div>
+									<div class="form__item">
+										<input class="form__input" placeholder="Email" name="Email" type="email" required>
+									</div>
+								</div>
+								<div class="form__right">
+									<textarea name="message" placeholder="Write your message here" class="form__input txta"></textarea>
+								</div>
+							</div>
+							<button data-fls-button="" type="submit" disabled class="form__button">Send message</button>
+						</form>
+					</div>
+				</section>
+				<section class="page__contact-info info-contact">
+					<div class="info-contact__container">
+						<div class="info-contact__item">
+							<h2 class="info-contact__title title">Working hours</h2>
+							<div class="info-contact__text">
+								Monday-Friday
+								<br>
+								7:00 to 16:00 (GMT)
+							</div>
 						</div>
-						<div class="about__img">
-							<picture>
-								<source media="(max-width: 600px)" srcset="./assets/img/about/about-600.webp" type="image/webp">
-								<img alt="Image" src="./assets/img/about/about.webp">
-							</picture>
+						<div class="info-contact__item">
+							<h2 class="info-contact__title title">FAQ</h2>
+							<a href="#" class="info-contact__button">Read more here</a>
 						</div>
-						<h3 class="about__label">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-						<div class="about__text">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-							</p>
+						<div class="info-contact__item">
+							<h2 class="info-contact__title title">Contacts</h2>
+							<div class="info-contact__text">
+								Email:
+								<br>
+								<a href="mailto:lumiopix@gmail.com">lumiopix@gmail.com</a>
+							</div>
 						</div>
-						<h3 class="about__label">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-						<div class="about__text">
-							<p>
+					</div>
+				</section>
+				<section class="page__text text">
+					<div class="text__container">
+						<h2 class="text__title title">The standard Lorem Ipsum passage, used since the 1500s</h2>
+						<div data-fls-showmore="" class="text__showmore">
+							<div data-fls-showmore-content="25" class="text__content">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-							</p>
+                    culpa qui officia deserunt mollit anim id est laborum
+							</div>
+							<button hidden data-fls-showmore-button="" type="button" class="text__more">
+								<span>Learn more</span>
+								<span>Hide</span>
+							</button>
 						</div>
 					</div>
 				</section>

@@ -48,10 +48,14 @@
         ]
       }
 		</script>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1754645156110"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1754653667932"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1754645156110">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1754645156110">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/showmore.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1754653667932">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1754653667932">
+		<link rel="stylesheet" crossorigin="" href="./css/showmore.min.css?v=1754653667932">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1754653667932">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -73,16 +77,16 @@
 									<a href="blog.html" class="menu__link">Articles</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">About</a>
+									<a href="about.html" class="menu__link">About</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Policies</a>
+									<a href="privacy.html" class="menu__link">Policies</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Contact us</a>
+									<a href="contact.html" class="menu__link">Contact us</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">FAQ</a>
+									<a href="index.html#faq" class="menu__link">FAQ</a>
 								</li>
 							</ul>
 						</nav>
@@ -191,7 +195,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__faq faq">
+				<section id="faq" class="page__faq faq">
 					<div class="faq__container">
 						<h2 class="faq__title title">Frequently Asked Questions</h2>
 						<div data-fls-spollers="" class="faq__spollers spollers">
@@ -238,231 +242,249 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__reviews reviews">
+				<section class="page__reviews reviews" aria-label="Reviews section" itemscope itemtype="https://schema.org/Product">
 					<div class="reviews__container">
 						<h2 class="reviews__title title">Reviews</h2>
+						<!-- Aggregate rating для всего продукта (средний рейтинг и количество отзывов) -->
+						<div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating" style="display: none">
+							<meta itemprop="ratingValue" content="4">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingCount" content="6">
+						</div>
 						<div data-fls-slider="" class="reviews__slider swiper">
 							<div class="reviews__wrapper swiper-wrapper">
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 1 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 2 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 3 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 4 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 5 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
-								<div class="reviews__slide swiper-slide">
-									<div class="reviews__author">
+								<!-- Отзыв 6 -->
+								<div class="reviews__slide swiper-slide" itemscope itemtype="https://schema.org/Review" itemprop="review">
+									<div class="reviews__author" itemscope itemtype="https://schema.org/Person" itemprop="author">
 										<div class="reviews__ico">
 											<picture>
-												<img alt="Image" src="./assets/img/main/reviews/ico.webp">
+												<img alt="User icon" src="./assets/img/main/reviews/ico.webp">
 											</picture>
 										</div>
-										<div class="reviews__name">Robert Davis</div>
+										<div class="reviews__name" itemprop="name">Robert Davis</div>
 									</div>
-									<div class="reviews__mark">
+									<div class="reviews__mark" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+										<meta itemprop="ratingValue" content="4">
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="+" src="./assets/img/main/reviews/star_blue.webp">
+											<img alt="Star" src="./assets/img/main/reviews/star_blue.webp">
 										</picture>
 										<picture>
-											<img alt="-" src="./assets/img/main/reviews/star_grey.webp">
+											<img alt="No star" src="./assets/img/main/reviews/star_grey.webp">
 										</picture>
 									</div>
-									<div class="reviews__level">Highly Recommend</div>
-									<div class="reviews__text">
+									<div class="reviews__level" itemprop="headline">Highly Recommend</div>
+									<div class="reviews__text" itemprop="reviewBody">
 										Alite was founded with a clear goal in mind - to help motorists avoid trouble on the road
 									</div>
 									<div class="reviews__img">
 										<picture>
-											<img alt="Image" src="./assets/img/main/reviews/review.webp">
+											<img alt="Review image" src="./assets/img/main/reviews/review.webp">
 										</picture>
 									</div>
 								</div>
 							</div>
 							<div class="reviews__nav">
-								<button type="button" class="reviews-swiper-button-prev"></button>
-								<button type="button" class="reviews-swiper-button-next"></button>
+								<button type="button" class="reviews-swiper-button-prev" aria-label="Previous review"></button>
+								<button type="button" class="reviews-swiper-button-next" aria-label="Next review"></button>
 							</div>
 						</div>
 					</div>

@@ -164,20 +164,20 @@ function menuInit() {
 }
 document.querySelector("[data-fls-menu]") ? window.addEventListener("load", menuInit) : null;
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector(".benefits__button.fixed-button");
+  const button2 = document.querySelector(".benefits__button.fixed-button");
   const footer = document.querySelector("footer");
   function checkButtonVisibility() {
     const scrollY = window.scrollY || window.pageYOffset;
     const windowHeight = window.innerHeight;
     const scrolledEnough = scrollY > 300;
     const footerRect = footer.getBoundingClientRect();
-    const buttonHeight = button.offsetHeight;
+    const buttonHeight = button2.offsetHeight;
     const buttonBottomPosition = windowHeight - 20;
     const footerOverlappingButton = footerRect.top < buttonBottomPosition + buttonHeight;
     if (scrolledEnough && !footerOverlappingButton) {
-      button.classList.add("visible");
+      button2.classList.add("visible");
     } else {
-      button.classList.remove("visible");
+      button2.classList.remove("visible");
     }
   }
   window.addEventListener("scroll", checkButtonVisibility);
@@ -262,12 +262,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector(".comments__input");
-  const button = document.querySelector(".comments__button");
+  const button2 = document.querySelector(".comments__button");
   input.addEventListener("input", () => {
     const hasText = input.value.trim().length > 0;
-    button.disabled = !hasText;
+    button2.disabled = !hasText;
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const copyButtons = document.querySelectorAll(".discount__copy");
+  copyButtons.forEach((button2) => {
+    button2.addEventListener("click", () => {
+      const codeElement = button2.parentElement;
+      const codeText = codeElement.childNodes[0].textContent.trim();
+      navigator.clipboard.writeText(codeText).then(() => {
+        button2.classList.add("copied");
+        setTimeout(() => button2.classList.remove("copied"), 1500);
+      }).catch((err) => {
+        console.error("Не удалось скопировать:", err);
+      });
+    });
+  });
+});
+const form = document.getElementById("contactForm");
+const button = form.querySelector('button[type="submit"]');
+const inputs = form.querySelectorAll("input[required]");
+function checkValidity() {
+  const allValid = Array.from(inputs).every((input) => input.checkValidity());
+  button.disabled = !allValid;
+}
+inputs.forEach((input) => {
+  input.addEventListener("input", checkValidity);
+});
+checkValidity();
 export {
   slideUp as a,
   slideDown as b,
